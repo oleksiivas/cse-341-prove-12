@@ -1,5 +1,3 @@
-//Horor. Horor.
-
 const path = require('path')
 const express = require('express')
 const bodyParser = require('body-parser')
@@ -14,7 +12,9 @@ const liveChat = require('./routes/liveChat')
 app.set('view engine', 'ejs')
     .set('views', 'views')
     .use(express.json())
-    .use(bodyParser.urlencoded({ extended: true }))
+    .use(bodyParser.urlencoded({
+        extended: true
+    }))
     .use(express.static(path.join(__dirname, 'public')))
     .use(
         session({
