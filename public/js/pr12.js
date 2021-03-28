@@ -25,8 +25,19 @@ const postData = async (url = '', data = {}) => {
 }
 
 // Login user to access chat room.
-const login = () => {
+const login = async() => {
     /***********************************
      *         YOUR CODE HERE          *
      ***********************************/
+    let username = usernameInput.value;
+    let time = date.getTime();
+
+    alert(`The user name is ${username} and the time is ${time}`);
+
+    const data = await postData('/login', {
+        username
+    })
+
+    socket.emit('newUser', username, time)
+    window.location = '/chat'
 }

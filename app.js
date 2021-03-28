@@ -40,9 +40,14 @@ io.on('connection', socket => {
         .on('newUser', (username, time) => {
             // A new user logs in.
             const message = `${username} has logged on.`
+            console.log(message);
+
             socket.broadcast.emit('newMessage', {
                 /** CONTENT for the emit **/
-            }) // <-----TODO-----
+                message,
+                time,
+                from: "admin Evgeniy "
+            })
         })
         .on('message', data => {
             // Receive a new message

@@ -22,4 +22,9 @@ const addMessage = (data = {}, user = false) => {
     /***********************************
      *         YOUR CODE HERE          *
      ***********************************/
+    chatBox.innerHTML += `
+     <li class="message${user ? ' uMessage' : ''}">
+         ${data.from} @${data.time}: ${data.message}
+     </li>
+     `
 }
