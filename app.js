@@ -46,7 +46,7 @@ io.on('connection', socket => {
                 /** CONTENT for the emit **/
                 message,
                 time,
-                from: "Evgeniy admin"
+                from: "admin"
             })
         })
         .on('message', data => {
