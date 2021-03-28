@@ -35,7 +35,7 @@ router.post('/login', (req, res, next) => {
 
     req.session.user = username
 
-    console.log(req.session.user)
+    //console.log(req.session.user)
 
     res.status(200).send({
         username: username
@@ -49,7 +49,7 @@ router.get('/chat', (req, res, next) => {
      ***********************************/
 
     res.render('../views/pages/pr12-chat.ejs', {
-        title: 'New Title :D',
+        title: 'Live chat',
         path: '/prove12',
         user: req.session.user
     })

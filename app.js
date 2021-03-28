@@ -46,7 +46,7 @@ io.on('connection', socket => {
                 /** CONTENT for the emit **/
                 message,
                 time,
-                from: "admin Evgeniy "
+                from: "Evgeniy admin"
             })
         })
         .on('message', data => {
@@ -55,6 +55,7 @@ io.on('connection', socket => {
             console.log(data)
             socket.broadcast.emit('newMessage', {
                 /** CONTENT for the emit **/
-            }) // <-----TODO----- Note, only emits to all OTHER clients, not sender.
+                ...data
+            })
         })
 })

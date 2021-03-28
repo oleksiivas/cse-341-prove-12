@@ -14,6 +14,23 @@ const postMessage = () => {
     /***********************************
      *         YOUR CODE HERE          *
      ***********************************/
+    const message = messageEl.value.trim()
+    const from = user.value
+
+    let dateNow = new Date()
+    const hours = dateNow.getHours().toString().padStart(2, '0')
+    const mins = dateNow.getMinutes().toString().padStart(2, '0')
+    const time = `${hours}:${mins}`
+
+    const data = {
+        message,
+        from,
+        time
+    }
+
+    socket.emit('message', data)
+    addMessage(data, true)
+    messageEl.value = ''
 }
 
 // Add message from any user to chatbox, determine if added
